@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: -28.024, lng: 140.887}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        // South Africa
+        {lat: 30.559482, lng: 22.937506},
+        // Russia
+        {lat: 61.52401, lng: 105.318756},
+        // Turkey
+        {lat: 38.963745, lng: 35.243322},
+        // India
+        {lat: 20.593684, lng: 78.96288},
+        // China
+        {lat: 35.86166, lng: 104.195397},
+        // Mexico
+        {lat: 23.634501, lng: -102.552784},
+        // Germany
+        {lat:  51.165691, lng:  10.451526},
+        // Brazil
+        {lat:  -14.235004, lng: -51.92528},
+        // US
+        {lat: 37.09024, lng:  -95.712891},
+        // Canada
+        {lat: 56.130366, lng: -106.346771},
+        // Australia
+        {lat: -25.274398, lng: 133.775136},
+        // UK
+        {lat: 55.378051, lng: -3.435973},
+        // Japan
+        {lat: 36.204824, lng: 138.252924}
+
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEq-7FY0I1ikQPyMQraBe0MCf51Oi6Nhc&callback=initMap">
+    </script>
+  </body>
+</html>
