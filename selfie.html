@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+  var selfie = [
+    'https://lh4.googleusercontent.com/p5i2Oasvr2-jFwfnZ3V-cPbOzZ9VMBmi_g669texjh0pIOC-pS_PMylEKQuI6mwZTP2_9caaUw63H4kALm6dZR1a6697zO6eCDyU7IGTD3YjwMURKoNM9xJ6bB3OqjNTCUTNe9aN',
+    'https://lh5.googleusercontent.com/nF8yZzWtBcGMtAIf0BIAhpKKsU-7TjgPHHQsgSYT3UmdT0csY4E4TxxJorndgjG8hrR5eaXsu0uKMagxhQeLJs9g6jVBiWpHilQx03rRANBcwf2iuRM8YT1hJEqhJiOZbJN4UpR3',
+    'https://lh5.googleusercontent.com/pNWvt6ST4la3JdBzH3j_3y_a5cdkSURUP2ah_6P-w99ujxhNkEz06XLSv1vbeDy6s79IARygDotIFyuh3f-SZbNdEmhP2g-3uEc0w4ll8K0DMcEfOjECCVNM1IWQloNGFQPvEvLL',
+    'https://lh3.googleusercontent.com/DjXC8cfWccV4IpTjaP0n3tpXDgrroCDgKT5KYFqZNnFOxu2eCmGCldL7r9xLPisjss9-aBwEGmCPKz9y3trC9mgubHobKpYViPI0UmlufBrVUPgYhgAcLv6L8uhrccZbV57U6UuZ',
+    'https://lh4.googleusercontent.com/KHtr1s8feMkG2UoUzFxdiU2CRepeYD4EUob6BkzioLQYhJdiK0-kDS4utI1RtjMSN3haPzWIS1d-bqRhMrhAL-WA0ytL1uthw5zU6mP8vY5QRVt_stSAKY3WV3l3Z7-ZbPOaImEY',
+    'https://lh5.googleusercontent.com/DROMr-GNLqa53KR1igVwXou8fOkI3B-B0xEnDzDj9zVFqgpErCG8h6cO1SCNrfnyyO-1W_MYilowLwhVkeLiauCMWTpZJ2LlHLPRcajlRHMA1X1Ym8bGLLFV_Y_w08UfjdIzUJCO',
+    ' https://lh6.googleusercontent.com/MY33a47OXHlcvBQoUnOj3dHv7Pibapfnul6iF4uqmgORszt0Ra9FLypVd443KHPboqYhBebjmMUZLmI_Rhs5kRntTNLogQnvtOUx2d0zss1ar1GIcVJEDhonSvw3pDxd4NAnD0M_',
+    'https://lh5.googleusercontent.com/-5z-dGP50i3Djt2iyvfz0MdXy1PfxvUVkrTFdG1_VjMx33NEEy-fUKGBLbZS-xJ_o63WFpt5Bx8D33V_G7uYPG7_9H-U7qKiYGEco7-RRssLzlbG3ep_LfdTabm2ndvgaR8bszVd'
+  ]
+
+
+  function newSelfie(){
+      var randomNumber = Math.floor(Math.random() * (selfie.length));
+      document.getElementById('selfie').src = selfie[randomNumber];
+  }
+  </script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <title>Photo of the Day</title>
+<style>
+body {
+text-align:center;
+display: center;
+  background-color: none;
+  /*background-image: url();*/
+  background-size: cover;
+  background-repeat: repeat;
+}
+#selfie{
+  width:500px;
+  height:500px;
+  outline-style:dotted;
+
+}
+h1 {
+  margin: 40px;
+  color: black;
+  font-style: oblique;
+}
+
+div {
+
+    margin: 40px;
+    background-color: none;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom:0px;
+    padding-left: 80px;
+    text-align: justify;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+button {
+  margin: 40px;
+}
+</style>
+
+</head>
+<body>
+  <h1 style="color:pink;">Photo of the Day</h1>
+  <div id="selfieDisplay"></div>
+<!--  <div class="container"> -->
+<img id="selfie" src=""/>
+
+  <!-- Quotes will display here -->
+
+<br>  <button onclick="newSelfie()" class="btn btn-primary">New Photo</button>
+  <!-- <script src="selfie.js"></script> -->
+
+</body>
+</html>
